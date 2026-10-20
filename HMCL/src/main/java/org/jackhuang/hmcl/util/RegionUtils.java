@@ -67,7 +67,8 @@ public final class RegionUtils {
     }
 
     public static boolean isIsChinaMainlandMachine() {
-        return IS_CHINA_MAINLAND_MACHINE;
+        if(System.getenv("CHINA") == "true") return IS_CHINA_MAINLAND_MACHINE;
+        else return false;
     }
 
     private static volatile @Nullable Boolean isChinaMainlandNetwork;
